@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'category_list_view.dart';
 import 'custom_app_bar.dart';
-import 'news_tile.dart';
+import 'news_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -24,7 +24,9 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
-          NewsTile(),
+          Expanded(
+            child: NewsListView(),
+          ),
         ],
       ),
     );
