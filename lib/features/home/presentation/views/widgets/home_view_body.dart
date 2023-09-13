@@ -14,20 +14,21 @@ class HomeViewBody extends StatelessWidget {
         end: 16,
         top: 16,
       ),
-      child: Column(
-        children: [
-          CustomAppBar(),
-          SizedBox(
-            height: 20,
-          ),
-          CategoryListView(),
-          SizedBox(
-            height: 32,
-          ),
-          Expanded(
-            child: NewsListView(),
-          ),
-        ],
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            CustomAppBar(),
+            SizedBox(
+              height: 20,
+            ),
+            CategoryListView(),
+            SizedBox(
+              height: 32,
+            ),
+            NewsListView(),
+          ],
+        ),
       ),
     );
   }
