@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'category_card.dart';
+import 'category_list_view.dart';
 import 'custom_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          CategoryCard(),
+          CategoryListView(),
         ],
       ),
     );
