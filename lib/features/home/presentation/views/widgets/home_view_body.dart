@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'category_list_view.dart';
 import 'custom_app_bar.dart';
+import 'news_tile.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -20,6 +21,10 @@ class HomeViewBody extends StatelessWidget {
             height: 20,
           ),
           CategoryListView(),
+          SizedBox(
+            height: 32,
+          ),
+          NewsTile(),
         ],
       ),
     );

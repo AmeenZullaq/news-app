@@ -5,4 +5,11 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     fontSize: 18,
   );
+  static const textStyle20 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
+  );
+   static const textStyle14 = TextStyle(
+    fontSize: 14,
+  );
 }
