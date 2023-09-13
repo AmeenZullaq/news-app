@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/styles/styles.dart';
+import 'package:news_app/core/utils/styles.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});

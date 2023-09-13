@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'category_card.dart';
 import 'custom_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -9,13 +9,17 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsetsDirectional.only(
-        start: 20,
-        end: 20,
-        top: 20,
+        start: 16,
+        end: 16,
+        top: 16,
       ),
       child: Column(
         children: [
           CustomAppBar(),
+          SizedBox(
+            height: 20,
+          ),
+          CategoryCard(),
         ],
       ),
     );
