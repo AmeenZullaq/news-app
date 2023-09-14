@@ -9,26 +9,30 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsetsDirectional.only(
-        start: 16,
-        end: 16,
+      padding: EdgeInsets.only(
         top: 16,
+        right: 16,
+        left: 16,
       ),
-      child: SingleChildScrollView(
+      child: CustomScrollView(
         physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            CustomAppBar(),
-            SizedBox(
-              height: 20,
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                CustomAppBar(),
+                SizedBox(
+                  height: 20,
+                ),
+                CategoryListView(),
+                SizedBox(
+                  height: 32,
+                ),
+              ],
             ),
-            CategoryListView(),
-            SizedBox(
-              height: 32,
-            ),
-            NewsListView(),
-          ],
-        ),
+          ),
+          NewsListView(),
+        ],
       ),
     );
   }

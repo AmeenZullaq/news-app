@@ -7,18 +7,18 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-     physics: const NeverScrollableScrollPhysics(),
-     shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return const NewsTile();
-      },
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 10,
-        );
-      },
-      itemCount: 10,
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          return const Padding(
+            padding: EdgeInsets.only(
+              bottom: 22,
+            ),
+            child: NewsTile(),
+          );
+        },
+        childCount: 10,
+      ),
     );
   }
 }
