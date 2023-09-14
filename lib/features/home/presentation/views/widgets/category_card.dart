@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils/styles.dart';
-import 'package:news_app/features/home/data/models/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key, required this.categoryModel});
+  const CategoryCard({super.key, required this.imageUrl});
 
-  final CategoryModel categoryModel;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +19,13 @@ class CategoryCard extends StatelessWidget {
           ),
           image: DecorationImage(
               image: AssetImage(
-                categoryModel.imageUrl,
+                imageUrl,
               ),
               fit: BoxFit.fill),
         ),
         child: Center(
           child: Text(
-            categoryModel.categoryName,
+            '',
             style: Styles.textStyle18.copyWith(
               color: Colors.white,
             ),
