@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/utils/assets.dart';
 import 'category_card.dart';
 
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});
 
   final List<String> images = const [
-    'assets/images/business.jpg',
-    'assets/images/general.jpg',
-    'assets/images/health.jpg',
-    'assets/images/interainment.jpg',
-    'assets/images/Science.jpg',
-    'assets/images/sport.jpg',
-    'assets/images/technology.jpg',
+    Assets.kBusinessImage,
+    Assets.kGeneralImage,
+    Assets.kHealthImage,
+    Assets.kIntertainmentImage,
+    Assets.kScienceImage,
+    Assets.kSportImage,
+    Assets.kTechnologyImage,
   ];
-
+f
   @override
   Widget build(BuildContext context) {
     return SizedBox(
