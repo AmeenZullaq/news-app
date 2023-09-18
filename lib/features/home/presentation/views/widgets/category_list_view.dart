@@ -14,7 +14,7 @@ class CategoryListView extends StatelessWidget {
     Assets.kSportImage,
     Assets.kTechnologyImage,
   ];
-f
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
