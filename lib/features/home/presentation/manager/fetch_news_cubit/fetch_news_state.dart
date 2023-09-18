@@ -18,7 +18,7 @@ final class FetchNewsfailure extends FetchNewsState {
 }
 
 final class FetchNewsSuccess extends FetchNewsState {
-  final List articales;
+  final List articles;
 
-  const FetchNewsSuccess(this.articales);
+  const FetchNewsSuccess(this.articles);
 }

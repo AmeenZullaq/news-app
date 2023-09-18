@@ -11,7 +11,7 @@ class HomeRepoImpl extends HomeRepo {
   final String apiKey = '0761382285834bfbb3f047670731b7f3';
   HomeRepoImpl(this.dio, this.api);
   @override
-  Future<Either<Failure, List<ArticalModel>>> getNews({
+  Future<Either<Failure, List<ArticleModel>>> getNews({
     required String country,
     String? category,
     String? q,
@@ -22,9 +22,9 @@ class HomeRepoImpl extends HomeRepo {
             'top-headlines?q=$q&country=$country&category=$category&apiKey=$apiKey',
       );
 
-      List<ArticalModel> articles = [];
+      List<ArticleModel> articles = [];
       for (var item in data['articles']) {
-        articles.add(ArticalModel.fromJson(item));
+        articles.add(ArticleModel.fromJson(item));
       }
       return right(articles);
     } catch (e) {
