@@ -11,10 +11,9 @@ class FetchNewsCubit extends Cubit<FetchNewsState> {
   Future<void> getNews({
     required String country,
     String? category,
-    String? q,
   }) async {
     emit(FetchNewsLoading());
-    var result = await homeRepo.getNews(country: country);
+    var result = await homeRepo.getNews();
     result.fold(
       (failure) {
         emit(FetchNewsfailure(failure.errMessage));

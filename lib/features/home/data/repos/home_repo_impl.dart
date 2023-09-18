@@ -12,14 +12,11 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(this.dio, this.api);
   @override
   Future<Either<Failure, List<ArticleModel>>> getNews({
-    required String country,
-    String? category,
-    String? q,
+    String category = 'general',
   }) async {
     try {
       Map<String, dynamic> data = await api.get(
-        endPoint:
-            'top-headlines?q=$q&country=$country&category=$category&apiKey=$apiKey',
+        endPoint: 'top-headlines?country=us&apiKey=$apiKey&category=$category',
       );
 
       List<ArticleModel> articles = [];
