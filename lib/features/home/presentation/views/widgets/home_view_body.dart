@@ -31,7 +31,8 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          NewsListView(),
+         NewsListView(),
+
         ],
       ),
     );

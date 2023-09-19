@@ -8,10 +8,12 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        errMessage,
-        style: Styles.textStyle20,
+    return SliverToBoxAdapter(
+      child: Center(
+        child: Text(
+          errMessage,
+          style: Styles.textStyle20,
+        ),
       ),
     );
   }
