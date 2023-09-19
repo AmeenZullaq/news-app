@@ -23,7 +23,7 @@ class NewsListView extends StatelessWidget {
                   child: NewsTile(articleModel: state.articles[index]),
                 );
               },
-              childCount: 10,
+              childCount: state.articles.length,
             ),
           );
         } else if (state is FetchNewsfailure) {
@@ -37,4 +37,3 @@ class NewsListView extends StatelessWidget {
     );
   }
 }
-

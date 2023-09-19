@@ -40,7 +40,7 @@ class NewsTile extends StatelessWidget {
         Text(
           articleModel.title ??
               'Large Title should be places in this place large Large Title should be places in this place large',
-          maxLines: 2,t
+          maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: Styles.textStyle20,
         ),

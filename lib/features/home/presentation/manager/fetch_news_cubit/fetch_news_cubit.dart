@@ -9,7 +9,7 @@ class FetchNewsCubit extends Cubit<FetchNewsState> {
   final HomeRepo homeRepo;
 
   Future<void> getNews({
-    required String country,
+    String? country,
     String? category,
   }) async {
     emit(FetchNewsLoading());
