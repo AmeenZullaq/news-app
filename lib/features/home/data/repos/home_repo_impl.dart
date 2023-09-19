@@ -6,10 +6,9 @@ import 'package:news_app/features/home/data/models/artical_model/artical_model.d
 import 'package:news_app/features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpl extends HomeRepo {
-  final Dio dio;
   final ApiService api;
   final String apiKey = '0761382285834bfbb3f047670731b7f3';
-  HomeRepoImpl(this.dio, this.api);
+  HomeRepoImpl(this.api);
   @override
   Future<Either<Failure, List<ArticleModel>>> getNews({
     String category = 'general',
