@@ -24,14 +24,18 @@ class NewsListView extends StatelessWidget {
                 );
               },
               childCount: state.articles.length,
-            ),
+            ), 
           );
         } else if (state is FetchNewsfailure) {
-          return CustomErrorWidget(
-            errMessage: state.errMessage,
+          return SliverToBoxAdapter(
+            child: CustomErrorWidget(
+              errMessage: state.errMessage,
+            ),
           );
         } else {
-          return const CustomLoadingIndecator();
+          return const SliverFillRemaining(
+            child: CustomLoadingIndecator(),
+          );
         }
       },
     );
