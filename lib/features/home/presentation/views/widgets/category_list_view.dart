@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils/assets.dart';
+import 'package:news_app/features/home/data/models/category_model/category_model.dart';
 import 'category_card.dart';
 
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});
 
-  final List<String> images = const [
-    Assets.kBusinessImage,
-    Assets.kGeneralImage,
-    Assets.kHealthImage,
-    Assets.kIntertainmentImage,
-    Assets.kScienceImage,
-    Assets.kSportImage,
-    Assets.kTechnologyImage,
+  final List<CategoryModel> categoryModel = const [
+    CategoryModel(Assets.kBusinessImage, 'business'),
+    CategoryModel(Assets.kGeneralImage, 'general'),
+    CategoryModel(Assets.kHealthImage, 'health'),
+    CategoryModel(Assets.kIntertainmentImage, 'entertainment'),
+    CategoryModel(Assets.kScienceImage, 'science'),
+    CategoryModel(Assets.kSportImage, 'sports'),
+    CategoryModel(Assets.kTechnologyImage, 'technology'),
   ];
 
   @override
@@ -23,14 +24,14 @@ class CategoryListView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return CategoryCard(imageUrl: images[index]);
+          return CategoryCard(categoryMode: categoryModel[index]);
         },
         separatorBuilder: (context, index) {
           return const SizedBox(
             width: 22,
           );
         },
-        itemCount: images.length,
+        itemCount: categoryModel.length,
       ),
     );
   }
