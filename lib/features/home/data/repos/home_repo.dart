@@ -4,6 +4,6 @@ import 'package:news_app/features/home/data/models/artical_model/artical_model.d
 
 abstract class HomeRepo {
   Future<Either<Failure, List<ArticleModel>>> getNews({
-    String category,
+    required String category,
   });
 }

@@ -11,7 +11,7 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(this.api);
   @override
   Future<Either<Failure, List<ArticleModel>>> getNews({
-    String category = 'general',
+    required String category,
   }) async {
     try {
       Map<String, dynamic> data = await api.get(

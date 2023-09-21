@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/features/home/data/models/category_model/category_model.dart';
+import '../../manager/fetch_news_cubit/fetch_news_cubit.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key, required this.categoryMode,});
+  const CategoryCard({
+    super.key,
+    required this.categoryMode,
+  });
 
-  final CategoryModel categoryMode ;
+  final CategoryModel categoryMode;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,8 @@ class CategoryCard extends StatelessWidget {
       aspectRatio: 1.7 / 1,
       child: GestureDetector(
         onTap: () {
-          
+          BlocProvider.of<FetchNewsCubit>(context)
+              .getNews(category: categoryMode.categoryName);
         },
         child: Container(
           decoration: BoxDecoration(

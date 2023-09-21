@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => FetchNewsCubit(
         getIt.get<HomeRepoImpl>(),
-      )..getNews(),
+      )..getNews(category: 'general'),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeView(),
