@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/features/home/data/models/category_model/category_model.dart';
-import '../../manager/fetch_news_cubit/fetch_news_cubit.dart';
+import 'package:news_app/features/home/presentation/views/category_view.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -17,8 +16,13 @@ class CategoryCard extends StatelessWidget {
       aspectRatio: 1.7 / 1,
       child: GestureDetector(
         onTap: () {
-          BlocProvider.of<FetchNewsCubit>(context)
-              .getNews(category: categoryMode.categoryName);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return const CategoryView();
+              },
+            ),
+          );
         },
         child: Container(
           decoration: BoxDecoration(

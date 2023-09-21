@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils/assets.dart';
-import 'package:news_app/features/home/data/models/category_model/category_model.dart';
+import 'package:news_app/features/home/data/models/category_model/get_category_data.dart';
 import 'category_card.dart';
 
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});
 
-  final List<CategoryModel> categoryModel = const [
-    CategoryModel(Assets.kBusinessImage, 'business'),
-    CategoryModel(Assets.kGeneralImage, 'general'),
-    CategoryModel(Assets.kHealthImage, 'health'),
-    CategoryModel(Assets.kIntertainmentImage, 'entertainment'),
-    CategoryModel(Assets.kScienceImage, 'science'),
-    CategoryModel(Assets.kSportImage, 'sports'),
-    CategoryModel(Assets.kTechnologyImage, 'technology'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final categoryModel = GetCategoryData().getCategoryData();
     return SizedBox(
       height: MediaQuery.of(context).size.height * .16,
       child: ListView.separated(
