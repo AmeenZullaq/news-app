@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/core/utils/app_router.dart';
 import 'package:news_app/core/utils/service_locator.dart';
 import 'package:news_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:news_app/features/home/presentation/manager/fetch_news_cubit/fetch_news_cubit.dart';
-import 'package:news_app/features/home/presentation/views/home_view.dart';
 
 void main() {
   setupServiceLocator();
@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
       create: (context) => FetchNewsCubit(
         getIt.get<HomeRepoImpl>(),
       )..getNews(category: 'general'),
-      child: const MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
-        home: HomeView(),
       ),
     );
   }

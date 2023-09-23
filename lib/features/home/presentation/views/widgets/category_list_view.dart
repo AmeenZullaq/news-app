@@ -14,7 +14,7 @@ class CategoryListView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return CategoryCard(categoryMode: categoryModel[index]);
+          return CategoryCard(categoryModel: categoryModel[index]);
         },
         separatorBuilder: (context, index) {
           return const SizedBox(

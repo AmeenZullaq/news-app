@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/utils/app_router.dart';
 import 'package:news_app/features/home/data/models/category_model/category_model.dart';
-import 'package:news_app/features/home/presentation/views/category_view.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     super.key,
-    required this.categoryMode,
+    required this.categoryModel,
   });
-  final CategoryModel categoryMode;
+  final CategoryModel categoryModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,9 @@ class CategoryCard extends StatelessWidget {
       aspectRatio: 1.7 / 1,
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return CategoryView(category: categoryMode.category);
-              },
-            ),
+          GoRouter.of(context).push(
+            AppRouter.kCategoryView,
+            extra: categoryModel.category,
           );
         },
         child: Container(
@@ -32,7 +30,7 @@ class CategoryCard extends StatelessWidget {
             ),
             image: DecorationImage(
                 image: AssetImage(
-                  categoryMode.imagePath,
+                  categoryModel.imagePath,
                 ),
                 fit: BoxFit.fill),
           ),
