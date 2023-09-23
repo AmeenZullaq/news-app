@@ -26,6 +26,7 @@ class NewsTile extends StatelessWidget {
             fit: BoxFit.fill,
             imageUrl: articleModel.urlToImage ?? kDefaultImage,
             placeholder: (context, url) => const CustomLoadingIndecator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         const SizedBox(

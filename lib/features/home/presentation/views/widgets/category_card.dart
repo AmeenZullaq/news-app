@@ -7,7 +7,6 @@ class CategoryCard extends StatelessWidget {
     super.key,
     required this.categoryMode,
   });
-
   final CategoryModel categoryMode;
 
   @override
@@ -19,7 +18,7 @@ class CategoryCard extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return const CategoryView();
+                return CategoryView(category: categoryMode.category);
               },
             ),
           );

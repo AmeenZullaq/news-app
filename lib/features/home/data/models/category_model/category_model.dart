@@ -1,6 +1,6 @@
 class CategoryModel {
   final String imagePath;
-  final String categoryName;
+  final String category;
 
-  const CategoryModel(this.imagePath, this.categoryName);
+  const CategoryModel(this.imagePath, this.category);
 }
