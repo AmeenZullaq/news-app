@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/category_view_app_bar.dart';
 import 'widgets/category_view_body.dart';
 
 class CategoryView extends StatelessWidget {
@@ -6,9 +7,13 @@ class CategoryView extends StatelessWidget {
   final String category;
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
-        body: CategoryViewBody(category: category),
+        appBar: CategoryViewAppBar(category: category),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: CategoryViewBody(category: category),
+        ),
       ),
     );
   }

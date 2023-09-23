@@ -20,14 +20,11 @@ class _CategoryViewBodyState extends State<CategoryViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
-      child: CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          NewsListView(),
-        ],
-      ),
+    return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        NewsListView(),
+      ],
     );
   }
 }
