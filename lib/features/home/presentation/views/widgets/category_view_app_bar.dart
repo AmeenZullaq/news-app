@@ -9,7 +9,7 @@ class CategoryViewAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: const Size.fromHeight(kToolbarHeight),
+      preferredSize: preferredSize,
       child: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -32,5 +32,5 @@ class CategoryViewAppBar extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

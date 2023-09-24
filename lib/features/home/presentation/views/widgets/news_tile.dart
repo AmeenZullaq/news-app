@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:news_app/constants.dart';
+import 'package:news_app/core/utils/app_router.dart';
 import 'package:news_app/core/utils/styles.dart';
 import 'package:news_app/core/widgets/custom_loading_indecator.dart';
 import 'package:news_app/features/home/data/models/artical_model/artical_model.dart';
@@ -20,13 +22,18 @@ class NewsTile extends StatelessWidget {
               8,
             ),
           ),
-          child: CachedNetworkImage(
-            height: MediaQuery.of(context).size.height * .30,
-            width: double.infinity,
-            fit: BoxFit.fill,
-            imageUrl: articleModel.urlToImage ?? kDefaultImage,
-            placeholder: (context, url) => const CustomLoadingIndecator(),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+          child: GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kDetailsView);
+            },
+            child: CachedNetworkImage(
+              height: MediaQuery.of(context).size.height * .30,
+              width: double.infinity,
+              fit: BoxFit.fill,
+              imageUrl: articleModel.urlToImage ?? kDefaultImage,
+              placeholder: (context, url) => const CustomLoadingIndecator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
         ),
         const SizedBox(
