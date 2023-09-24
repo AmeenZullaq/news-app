@@ -17,14 +17,13 @@ class NewsTile extends StatelessWidget {
     return Column(
       children: [
         ClipRRect(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(
-              8,
-            ),
-          ),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
           child: GestureDetector(
             onTap: () {
-              GoRouter.of(context).push(AppRouter.kDetailsView);
+              GoRouter.of(context).push(
+                AppRouter.kDetailsView,
+                extra: articleModel,
+              );
             },
             child: CachedNetworkImage(
               height: MediaQuery.of(context).size.height * .30,
