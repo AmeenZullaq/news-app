@@ -24,7 +24,7 @@ class NewsListView extends StatelessWidget {
                 );
               },
               childCount: state.articles.length,
-            ), 
+            ),
           );
         } else if (state is FetchNewsfailure) {
           return SliverFillRemaining(
