@@ -23,7 +23,7 @@ class CategoryNewsListView extends StatelessWidget {
             ),
           );
         } else if (state is FetchNewsByCategoryFailure) {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
             child: CustomErrorWidget(errMessage: state.errMessage),
           );
         } else {
