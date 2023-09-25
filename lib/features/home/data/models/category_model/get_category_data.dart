@@ -5,7 +5,6 @@ class GetCategoryData {
   List<CategoryModel> getCategoryData() {
     return const [
       CategoryModel(Assets.kBusinessImage, 'business'),
-      CategoryModel(Assets.kGeneralImage, 'general'),
       CategoryModel(Assets.kHealthImage, 'health'),
       CategoryModel(Assets.kIntertainmentImage, 'entertainment'),
       CategoryModel(Assets.kScienceImage, 'science'),

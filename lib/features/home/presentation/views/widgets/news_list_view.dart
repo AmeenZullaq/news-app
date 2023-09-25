@@ -27,7 +27,7 @@ class NewsListView extends StatelessWidget {
             ), 
           );
         } else if (state is FetchNewsfailure) {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
             child: CustomErrorWidget(
               errMessage: state.errMessage,
             ),
